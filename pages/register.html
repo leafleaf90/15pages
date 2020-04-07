@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>15 pages - Register</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+	<!-- Icons -->
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="64x64" href="">
+    <!-- Apple/Safari icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="">
+    <!-- Square Windows tiles -->
+    <!-- Rectangular Windows tile -->
+    <!-- Windows tile theme color -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+</head>
+<body>
+
+<header>
+
+<h1>Welcome! Start your journey by signing up:</h1>
+
+<form class="reg-form" action="register.html" method="post">
+    <fieldset class="fieldset1">
+        <legend><span class="number">1</span>Basic Info</legend>
+
+        <label for="name">Username:</label>
+        <input type="text" id="name" name="user_name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="user_email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="user_password">
+    </fieldset>
+
+    <fieldset class="fieldset2">    
+        <legend><span class="number">2</span>Reading habits</legend>
+
+        <label for="fav-book">My Favorite Book:</label>
+        <input type="text" id="fav-book" name="user_favbook">
+
+        <label>Why I Read:</label>
+        <input type="checkbox" id="knowledge" name="read_reason" value="knowledge"><label class="light" for="knowledge">Knowledge</label>
+        <input type="checkbox" id="entertainment" name="read_reason" value="entertainment"><label class="light" for="entertainment">Entertainment</label>
+        <input type="checkbox" id="both" name="read_reason" value="both"><label class="light" for="both">Both</label>
+
+    </fieldset>
+
+    <button class="submit-button" type="submit">Sign Up</button>
+</form>
+
+</header>
+
+
+</body>
