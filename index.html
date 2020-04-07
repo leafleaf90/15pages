@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>15 pages - Accumulated knowledge</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/getdata.js"></script>
+	<!-- Icons -->
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="64x64" href="">
+    <!-- Apple/Safari icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="">
+    <!-- Square Windows tiles -->
+    <!-- Rectangular Windows tile -->
+    <!-- Windows tile theme color -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+</head>
+
+<body>
+	<header>
+		<div class="wrap">
+	<h1>Welcome to 15 pages</h1>
+	<div class="userBook">
+		<div class = "userBookInfo">
+			<p id="userBookTitle">My Book: </p>
+			<p id="userBookPages">Pages: </p>
+			<p id="userReadPages">Pages Read: </p>
+		</div>
+		<div class = "userBookCover">
+			<p style="font-size:2em;">?</p>
+		<!--	<img src="../images/harry.jpg"> -->
+		</div>
+		</div>
+		<div class="daysUntilDone hidden">
+			<p></p>
+		</div>
+
+
+	<div class="submitAnswer" id="div-getTitle">
+		<form>
+	  		<input id="title" type="text" name="title" placeholder="I'm reading...">
+	  		<button class="btn-submit" type="button" name="btnSubmitTitle" value="Submit"
+	  		onclick="getTitle();"> Submit </button>
+		</form>
+		</div>
+
+	<div class="submitAnswer hidden" id="div-bookPages">
+		<form id="pages-form">
+		  <input id="bookPages" type="number" name="bookPages" placeholder="Pages in book...">
+		  <button class="btn-submit" type="button" name="btnSubmitBookPages" value="Submit"
+		  	onclick="getBookPages();"> Submit </button>
+		</form>
+	</div>
+
+	<div class="submitAnswer hidden" id="div-readPages">
+		<form id="pages-form">
+		  <input id="readPages" type="number" name="readPages" placeholder="Pages read...">
+		  <button class="btn-submit" type="button" name="btnSubmitReadPages" value="Submit"
+		  onclick="getPagesRead();"> Submit </button>
+		</form>
+	</div>
+
+	<div class="submitAnswer">
+	<div class="book-form hidden" id="div-URLcover">
+		<p>URL to book cover</p>
+		<form>
+		  <input id="URLcover" type="URL" name="URLcover" placeholder="URL...">
+		  <button class="btn-submit" type="submit" name="btnSubmit" value="Submit"> Submit </button>
+		</form>
+	</div>
+</div>
+	
+
+	</div>
+
+	</header>
+</div>
+</body>
+
+</html>
