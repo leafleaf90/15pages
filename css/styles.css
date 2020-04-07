@@ -37,6 +37,15 @@ form{
   justify-content: center;
 }
 
+.book-form{
+  position:fixed;
+  bottom:20px;
+}
+
+.book-form input{
+  width:100%;
+}
+
 .reg-form{
   flex-direction: column;
   max-width: 80%;
@@ -253,7 +262,6 @@ nav {
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
   margin-top: 10px;
 }
-
 
 button{
     cursor: pointer;

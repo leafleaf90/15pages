@@ -38,25 +38,20 @@
 			<p></p>
 		</div>
 
-
-	<div class="submitAnswer" id="div-getTitle">
-		<form>
+		<form class="book-form" class="submitAnswer" id="div-getTitle">
 	  		<input id="title" type="text" name="title" placeholder="I'm reading...">
 	  		<button class="btn-submit" type="button" name="btnSubmitTitle" value="Submit"
 	  		onclick="getTitle();"> Submit </button>
 		</form>
-		</div>
 
-	<div class="submitAnswer hidden" id="div-bookPages">
-		<form id="pages-form">
+		<form class="submitAnswer hidden" id="div-bookPages" id="pages-form" class="book-form">
 		  <input id="bookPages" type="number" name="bookPages" placeholder="Pages in book...">
 		  <button class="btn-submit" type="button" name="btnSubmitBookPages" value="Submit"
 		  	onclick="getBookPages();"> Submit </button>
 		</form>
-	</div>
 
 	<div class="submitAnswer hidden" id="div-readPages">
-		<form id="pages-form">
+		<form id="pages-form" class="book-form">
 		  <input id="readPages" type="number" name="readPages" placeholder="Pages read...">
 		  <button class="btn-submit" type="button" name="btnSubmitReadPages" value="Submit"
 		  onclick="getPagesRead();"> Submit </button>
@@ -66,7 +61,7 @@
 	<div class="submitAnswer">
 	<div class="book-form hidden" id="div-URLcover">
 		<p>URL to book cover</p>
-		<form>
+		<form class="book-form">
 		  <input id="URLcover" type="URL" name="URLcover" placeholder="URL...">
 		  <button class="btn-submit" type="submit" name="btnSubmit" value="Submit"> Submit </button>
 		</form>
