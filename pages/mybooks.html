@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>My Books</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="../js/script.js"></script>
+</head>
+<div id='books'></div>
+
+<script>
+    let userBooks=[
+        {
+            title: "Hitch-22",
+            author: "Christopher Hitchens",
+            pages: 500
+        },
+        {
+            title: "The Kings of Cool",
+            author: "Don Winslow",
+            pages: 350
+        },
+        {
+            title: "Mr Nice",
+            author: "Howard Marks",
+            pages: 450
+        },
+
+    ];
+
+    let message='';
+    let book;
+
+    function print(message){
+        let outputDiv = document.getElementById('books');
+        outputDiv.innerHTML = message;
+    }
+
+    for(let i=0;i<userBooks.length;i++){
+        book=userBooks[i];
+        message+=`<h2>${book.title} by ${book.author}</h2>
+        <p>Pages: ${book.pages}</p>`
+    }
+    print(message);
+
+
+</script>
+</html>
