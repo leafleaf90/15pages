@@ -38,8 +38,10 @@ form{
 }
 
 .book-form{
-  position:fixed;
-  bottom:20px;
+  width:100%;
+  position:absolute;
+  left:0;
+  right:0;
 }
 
 .book-form input{
@@ -104,7 +106,7 @@ input[type="checkbox"] {
 
 .wrap{
   width:90%;
-  height: 100%;
+  height: 100vh;
   position: relative;;
 }
 
@@ -187,15 +189,6 @@ nav {
     display: block;
 }
 
-.submitAnswer{
-  position:absolute;
-  bottom: 30px;
-}
-
-.submitAnswer{
-  width:100%;
-}
-
 .userBookInfo{
   border: solid 2px yellow;
   border-radius:8px 8px 8px 8px;
@@ -245,8 +238,13 @@ nav {
     z-index:7;
   }
 
-#pages-form{
+.pages-form{
   width:40%;
+}
+
+.collectBookInfo{
+  height:100%;
+  position:relative;
 }
 
 .reg-form .submit-button {

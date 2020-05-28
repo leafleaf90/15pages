@@ -9,7 +9,9 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="../js/script.js"></script>
 </head>
+<body>
 <div id='books'></div>
+
 
 <script>
     let userBooks=[
@@ -33,6 +35,7 @@
 
     let message='';
     let book;
+    let search='';
 
     function print(message){
         let outputDiv = document.getElementById('books');
@@ -42,10 +45,29 @@
     for(let i=0;i<userBooks.length;i++){
         book=userBooks[i];
         message+=`<h2>${book.title} by ${book.author}</h2>
-        <p>Pages: ${book.pages}</p>`
+        <p>Pages: ${book.pages}</p>`;
     }
     print(message);
 
+    while(true){
+        search=prompt('What title do you want to search for? Type q to quit');
+        if (search===null||search.toLocaleLowerCase()==='q'){
+            break;
+        }
+        else{
+            for(let i=0;i<userBooks.length;i++){
+                book=userBooks[i];
+                if(search===book.title){
+                    alert('Exists!');
+                    message=`<h2>${book.title} by ${book.author}</h2>
+                    <p>Pages: ${book.pages}</p>`;
+                    print(message);
+                }
+            }
+        }
+    }   
+
 
 </script>
+</body>
 </html>

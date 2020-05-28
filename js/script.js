@@ -1,53 +1,93 @@
-let bookPages;
+let userBook={
+	title:"",
+	pages:null,
+	readPages:null,
+	pagesRemaining:null,
+	daysRemaining:null
+};
+
+let userBookInfoDiv=document.querySelector('.userBookInfo');
+let message='';
+
+function hide(element){
+	element.style.visibility="hidden";
+	element.style.zIndex="-10";
+}
+
+function show(element){
+	element.style.visibility="visible";
+}
+
+function getInputValue(element){
+	return element.value;
+}
+
+function print(element,message){
+	element.innerHTML=message;
+}
+
+function formFinished(){
+	greenBorder(userBookInfoDiv);
+	greenBorder(userBookInfoDiv.querySelector('#userReadPages'));
+	greenBorder(userBookInfoDiv.querySelector('#userBookPages'));
+	greenBorder(userBookInfoDiv.querySelector('#userBookTitle'));
+	userBook.pagesRemaining=userBook.pages-userBook.readPages;
+	userBook.daysRemaining=Math.ceil(userBook.pagesRemaining/15);
+	message = `You will finish this book in: ${userBook.daysRemaining} days!`
+	let daysUntilDoneDiv=document.querySelector('.daysUntilDone');
+	print(daysUntilDoneDiv,message);
+	show(daysUntilDoneDiv);
+}
+
+
+function greenBorder(element){
+	element.style.borderColor="lightgreen";
+}
 
 function getTitle(){
-	let bookTitle=document.getElementById("title").value;
-	document.querySelector('#userBookTitle').innerHTML = `My Book: ${bookTitle}`
-	document.getElementById('div-getTitle').style.visibility="hidden";
-	document.getElementById('div-getTitle').style.zIndex="-10";
-	document.getElementById('div-bookPages').style.visibility="visible";
+	let getTitleDiv=document.querySelector('#div-getTitle');
+	userBook.title=getInputValue(getTitleDiv.querySelector('#title'));
+	let titleOutputDiv=userBookInfoDiv.querySelector('#userBookTitle');
+	message=`My Book: ${userBook.title}`
+	print(titleOutputDiv,message);
+	hide(getTitleDiv);
+	show(document.querySelector('#div-bookPages'));
 }
 
 function getBookPages(){
-	bookPages=document.getElementById("bookPages").value;
-	console.log(isNaN(bookPages))
-	console.log(bookPages);
-	if(bookPages==""){
-		alert("Please input a number");
+	let getPagesDiv=document.querySelector('#div-bookPages');
+	userBook.pages=+(getInputValue(getPagesDiv.querySelector('#bookPages')));
+	if(userBook.pages==0){
+		alert("Please input a valid number");
 	}
 	else{
-	document.querySelector('#userBookPages').innerHTML = `Pages: ${bookPages}`
-	document.getElementById('div-bookPages').style.visibility="hidden";
-	document.getElementById('div-bookPages').style.zIndex="-10";
-	document.getElementById('div-readPages').style.visibility="visible";
+	let pagesOutputDiv=userBookInfoDiv.querySelector('#userBookPages');
+	message=`Pages: ${userBook.pages}`;
+	print(pagesOutputDiv,message);
+	hide(getPagesDiv);
+	show(document.querySelector('#div-readPages'));
 }}
 
 function getPagesRead(){
-	let readPages=document.getElementById("readPages").value;
-	let bookPages=document.getElementById("bookPages").value;
-	if (readPages>=bookPages){
-		alert("Seems like you have finished that book already!")
+	let getReadPagesDiv=document.querySelector('#div-readPages');
+	userBook.readPages=+(getInputValue(getReadPagesDiv.querySelector('#readPages')));
+	if (userBook.readPages>=userBook.pages){
+		alert("Seems like you have finished that book already!");
 	}
 	else{
-	document.querySelector('#userReadPages').innerHTML = `Pages Read: ${readPages}`
-	document.getElementById('div-readPages').style.visibility="hidden";
-	document.getElementById('div-readPages').style.zIndex="-10";
-	document.querySelector('div.userBookInfo').style.borderColor="lightgreen";
-	document.getElementById('userReadPages').style.borderColor="lightgreen";
-	document.getElementById('userBookPages').style.borderColor="lightgreen";
-	document.getElementById('userBookTitle').style.borderColor="lightgreen";
-	let pagesRemaining=bookPages-readPages;
-	let daysRemaining=Math.ceil(pagesRemaining/15);
-	document.querySelector('div.daysUntilDone').innerHTML = `You will finish this book in: ${daysRemaining} days!`
-	document.querySelector('div.daysUntilDone').style.visibility="visible";
+		let readPagesOutputDiv = userBookInfoDiv.querySelector('#userReadPages');
+		message=`Pages Read: ${userBook.readPages}`
+		print(readPagesOutputDiv,message);
+		hide(getReadPagesDiv);
+		formFinished();
 	}
-
+}
 
 
 
 
 	//document.getElementById('div-readPages').style.visibility="visible";
-}
+
 
 
 
