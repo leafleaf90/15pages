@@ -150,6 +150,19 @@ nav {
   justify-content: center;
 }
 
+footer {
+  height: 50px;
+  color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 0.5px #f4f4f4 solid;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 .menu {
   font-size: 2vw;
   padding: 0vh 2vw 0vh 2vw;
